@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<EtherCATInfo Version="1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="EtherCATInfo.xsd">
+	<Vendor>
+		<Id>#xE0000044</Id>
+		<Name>LAUMAS</Name>
+		
+	</Vendor>
+	<Descriptions>
+		<Groups>
+			<Group>
+				<Type>TLB4ETHERCAT</Type>
+				<Name LcId="1033">tlb4ETHERCAT</Name>
+				
+			</Group>
+		</Groups>
+		<Devices>
+			<Device Physics="YY">
+				<Type ProductCode="#x0000000B" RevisionNo="#x00000000">tlb4ETHERCAT</Type>
+				<Name LcId="1033"><![CDATA[TLB4ETHERCAT]]></Name>
+				<URL><![CDATA[http://www.laumas.com]]></URL>
+				<GroupType>TLB4ETHERCAT</GroupType>
+				<Fmmu>Outputs</Fmmu>
+				<Fmmu>Inputs</Fmmu>
+				<Fmmu>MBoxState</Fmmu>
+				<Sm MinSize="128" MaxSize="128" DefaultSize="128" StartAddress="#x1000" ControlByte="#x36" Enable="1">MBoxOut</Sm>
+				<Sm MinSize="128" MaxSize="128" DefaultSize="128" StartAddress="#x1080" ControlByte="#x32" Enable="1">MBoxIn</Sm>
+				<Sm MinSize="8" MaxSize="8" DefaultSize="8" StartAddress="#x1100" ControlByte="#x74" Enable="1">Outputs</Sm>
+				<Sm MinSize="18" MaxSize="18" DefaultSize="18" StartAddress="#x1D00" ControlByte="#x30" Enable="1">Inputs</Sm>
+        <RxPdo Sm="2">
+          <Index>#x1600</Index>
+          <Name>Outputs</Name>
+          <Entry>
+            <Index>#x2000</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Command Register</Name>
+            <DataType SwapData="Swap_HB_LB">UNSIGNED16</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x2000</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Digital Outputs Command</Name>
+            <DataType SwapData="Swap_HB_LB">UNSIGNED16</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x2000</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Exchange Register</Name>
+            <DataType SwapData="Swap_HB_LB_HW_LW">UNSIGNED32</DataType>
+          </Entry>
+
+        </RxPdo>
+        <TxPdo Sm="3">
+          <Index>#x1A00</Index>
+          <Name>Inputs</Name>
+          <Entry>
+            <Index>#x3000</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Channel 1</Name>
+            <DataType SwapData="Swap_HB_LB_HW_LW">SIGNED32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x3000</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Channel 2</Name>
+            <DataType SwapData="Swap_HB_LB_HW_LW">SIGNED32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x3000</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Channel 3</Name>
+            <DataType SwapData="Swap_HB_LB_HW_LW">SIGNED32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x3000</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Channel 4</Name>
+            <DataType SwapData="Swap_HB_LB_HW_LW">SIGNED32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x3000</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Status Register</Name>
+            <DataType SwapData="Swap_HB_LB">UNSIGNED16</DataType>
+          </Entry>
+        </TxPdo>
+				<Mailbox>
+					<CoE SdoInfo="1" PdoUpload="0" CompleteAccess="0"/>
+				</Mailbox>
+				<Eeprom>
+					<ByteSize>26</ByteSize>
+          <ConfigData>060001EEE8030000</ConfigData>
+        </Eeprom>
+				
+			</Device>
+		</Devices>
+	</Descriptions>
+</EtherCATInfo>
